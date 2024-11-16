@@ -1,0 +1,115 @@
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 15px 10px;
+}
+
+.button-row a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Social Buttons */
+
+.telegramButton, .discordButton, .steamButton, .githubButton, .mastodonButton {
+    flex: 1 1 calc(33.33% - 20px);
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 100px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.telegramButton {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.discordButton {
+    background-color: #7289da;
+    color: white;
+}
+
+.steamButton {
+    background-color: #171a21;
+    color: white;
+}
+
+.githubButton {
+    background-color: #333;
+    color: white;
+}
+
+.mastodonButton {
+    background-color: #6d40b6;
+    color: white;
+}
+
+
+.telegramButton:hover, .discordButton:hover, .steamButton:hover, .githubButton:hover, .mastodonButton:hover {
+    transform: scale(1.05);
+}
+
+.telegramButton:hover {
+    background-color: #2563eb;
+}
+
+.discordButton:hover {
+    background-color: #5b6e99;
+}
+
+.steamButton:hover {
+    background-color: #2e343b;
+}
+
+.githubButton:hover {
+    background-color: #444;
+}
+
+.mastodonButton:hover {
+    background-color: #683dad;
+}
+
+/* Music Buttons */
+
+.spotifyButton, .telegramMusicButton {
+    flex: 1 1 calc(33.33% - 20px);
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 100px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.spotifyButton {
+    background-color: #2fc042;
+    color: white;
+}
+
+.telegramMusicButton {
+    background-color: rgb(161, 46, 206);
+    color: white;
+}
+
+
+.spotifyButton:hover, .telegramMusicButton:hover {
+    transform: scale(1.05);
+}
+
+.spotifyButton:hover {
+    background-color: #c4a82e;
+}
+
+.telegramMusicButton:hover {
+    background-color: rgb(135, 37, 173);
+}
+
+@media (max-width: 600px) {
+    .button-row div {
+        flex: 1 1 100%;
+    }
+}
