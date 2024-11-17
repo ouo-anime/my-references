@@ -1,45 +1,51 @@
 body {
-    margin: 0;
-    font-family: 'JetBrains Mono', monospace;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    background: linear-gradient(45deg, #8B0000, #FF4500, #6A2C2C, #3E1F1D);
-    background-size: 400% 400%;
-    animation: gradientAnimation 10s ease infinite;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+    transition: background-color 0.3s ease;
 }
 
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+.navbar {
+    padding: 0.5rem 1rem;
 }
 
-.container {
-    width: 100%;
-    max-width: 400px;
-    background-color: black;
-    overflow-y: auto;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+.navbar .navbar-brand {
+    font-weight: bold;
 }
 
-
-.container::-webkit-scrollbar {
-    display: none;
+.navbar .nav-link {
+    margin-right: 1rem;
+    color: #333;
 }
 
-.header {
-    background-color: #C20A09;
-    height: 150px;
+.navbar .nav-link.active {
+    font-weight: bold;
+    color: #007bff;
+}
+
+#themeToggle {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.theme-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.socialMedia-section .socialMedia-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.socialMedia-section .socialMedia-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+footer {
+    background-color: #fefefe;
+    border-top: 1px solid #ddd;
 }
