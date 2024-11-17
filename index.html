@@ -3,89 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/profile.css" />
-    <link rel="stylesheet" type="text/css" href="css/separator.css" />
-    <link rel="stylesheet" type="text/css" href="css/buttons.css" />
-    <link rel="stylesheet" type="text/css" href="css/gallery.css" />
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <title>UWU</title>
     <link rel="icon" type="image/png" href="media/image/profile.png">
-
 </head>
-<body>
-    <div class="container">
-        <!-- Header -->
-        <div class="header"></div>
+<body class="d-flex flex-column min-vh-100">
 
-        <!-- Profile -->
-        <div class="profile">
-            <!-- Avatar (Video) -->
-            <div class="profile-picture">
-                <video class="profile-video" autoplay muted loop>
-                    <source src="media/video/video-profile.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <!-- Text -->
-            <div class="profile-text">
-                <p class="name">AliveExLU</p>
-                <p class="username">@mi_uwu_mi</p>
-                <p class="description">A person who simply follows trends and tries new things.</p>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="#">Hola!</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                </ul>
             </div>
         </div>
+    </nav>
 
-        <!-- Separator -->
-        <div class="separator">
-            <div class="separator-text">Social</div>
+    <section class="profile d-flex align-items-center py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4">AliveExLU</h1>
+                    <p class="quote fst-italic">“When the sun is shining, I can do anything; no mountain is too high, no trouble too difficult to overcome.” — Wilma Rudolph</p>
+                    <p class="description text-muted">A person who simply follows trends and tries new things.</p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="media/image/profile.png" alt="Audrey Hepburn" class="img-fluid rounded-circle profile-img">
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Buttons -->
-        <div class="button-row">
-            <a href="https://t.me/mi_uwu_mi" class="telegramButton">Telegram</a>
-            <a href="https://discordapp.com/users/923491133525483551" class="discordButton">Discord</a>
-            <a href="https://steamcommunity.com/profiles/76561199646701194/" class="steamButton">Steam</a>
-            <a href="https://github.com/ouo-anime" class="githubButton">GitHub</a>
-            <a href="https://mastodon.social/@mi_uwu_mi" class="mastodonButton">Mastodon</a>
+    <section class="socialMedia-section py-5 bg-light">
+        <div class="container">
+            <div class="separator d-flex align-items-center my-4">
+                <div class="flex-grow-1 border-top border-dark"></div>
+                <span class="separator-text mx-3 px-3 bg-dark text-white">Social Media</span>
+                <div class="flex-grow-1 border-top border-dark"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3 text-center">
+                    <div class="socialMedia-card p-3 bg-white shadow rounded">
+                        <a href="#" class="card-link" style="color: #000; text-decoration: none; display: block;">
+                            <img src="media/image/telegram_poster.png" alt="Telegram Profile" class="img-fluid rounded">
+                            <h5 class="mt-3">Telegram</h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="socialMedia-card p-3 bg-white shadow rounded">
+                        <a href="https://steamcommunity.com/profiles/76561199646701194/" target="_blank" class="card-link" style="color: #000; text-decoration: none; display: block;">
+                            <img src="media/image/steam_poster.png" alt="Steam Profile" class="img-fluid rounded">
+                            <h5 class="mt-3">Steam</h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="socialMedia-card p-3 bg-white shadow rounded">
+                        <a href="https://mastodon.social/@mi_uwu_mi" class="card-link" style="color: #000; text-decoration: none; display: block;">
+                            <img src="media/image/mastodon_poster.png" alt="Mastodon Profile" class="img-fluid rounded">
+                            <h5 class="mt-3">Mastodon</h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="socialMedia-card p-3 bg-white shadow rounded">
+                        <a href="https://discordapp.com/users/923491133525483551" class="card-link" style="color: #000; text-decoration: none; display: block;">
+                            <img src="media/image/discord_poster.png" alt="Discord Profile" class="img-fluid rounded">
+                            <h5 class="mt-3">Discord</h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="separator d-flex align-items-center my-4">
+                <div class="flex-grow-1 border-top border-dark"></div>
+                <span class="separator-text mx-3 px-3 bg-dark text-white">Music</span>
+                <div class="flex-grow-1 border-top border-dark"></div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="socialMedia-card p-3 bg-white shadow rounded">
+                    <a href="https://open.spotify.com/playlist/36eNQgD2d2UDkLpB6BP9th" class="card-link" style="color: #000; text-decoration: none; display: block;">
+                        <img src="media/image/spotify_poster.png" alt="Spotify Music Playlist" class="img-fluid rounded">
+                        <h5 class="mt-3">Spotify</h5>
+                    </a>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Separator -->
-        <div class="separator">
-            <div class="separator-text">Music</div>
-        </div>
+    <footer class="mt-auto bg-light text-center py-3">
+        <p class="mb-0 text-muted">&copy; 2024 AliveExLU Page</p>
+    </footer>
 
-        <!-- Buttons -->
-        <div class="button-row">
-            <a href="https://open.spotify.com/playlist/36eNQgD2d2UDkLpB6BP9th" class="spotifyButton" target="_blank">Spotify</a>
-            <a href="https://t.me/MusicChannelByExLU" class="telegramMusicButton" target="_blank">Other</a>
-        </div>
-        
-        
-        <!-- Separator -->
-         <!--
-        <div class="separator">
-            <div class="separator-text">Gallery</div>
-        </div>
-        -->
-
-        <!-- Gallery Row -->
-         <!--
-        <div class="gallery-row">
-            <a href="" class="gallery-image">
-                <img src="" alt="Example Image">
-            </a>
-            <a href="" class="gallery-image">
-                <img src="" alt="Example Image">
-            </a>
-        </div>
-        -->
-
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
