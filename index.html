@@ -3,104 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <title>UWU</title>
+    <title>AliveExLU</title>
     <link rel="icon" type="image/png" href="media/image/profile.png">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/vcr-osd-mono');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'VCR OSD Mono', monospace;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        header {
+            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .logo {
+            font-size: 1.8rem;
+            color: #00f0ff;
+            text-shadow: 0 0 10px #00f0ff;
+        }
+        .profile-section {
+            padding: 40px 0;
+        }
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ff007a;
+            box-shadow: 0 0 15px #ff007a;
+            animation: pulse 3s infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 15px #ff007a; }
+            50% { box-shadow: 0 0 25px #ff007a; }
+            100% { box-shadow: 0 0 15px #ff007a; }
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #00f0ff;
+            text-shadow: 0 0 10px #00f0ff;
+            margin-bottom: 10px;
+        }
+        .quote {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            margin: 20px 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 0 5px #ffffff;
+        }
+        .description {
+            font-size: 1rem;
+            color: #bbbbbb;
+            margin-bottom: 20px;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .social-links a {
+            color: #ff007a;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 16px;
+            border: 1px solid #ff007a;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px #ff007a;
+        }
+        .social-links a:hover {
+            background: #ff007a;
+            color: #0a0a0a;
+            box-shadow: 0 0 10px #ff007a;
+            transform: translateY(-2px);
+        }
+        footer {
+            margin-top: auto;
+            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.8);
+        }
+        footer p {
+            color: #bbbbbb;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+            .quote {
+                font-size: 1rem;
+            }
+            .social-links a {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+        }
+    </style>
 </head>
-<body class="d-flex flex-column min-vh-100">
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-        <div class="container-fluid px-4">
-            <a class="navbar-brand" href="#">Hola!</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <section class="profile d-flex align-items-center py-5">
+<body>
+    <canvas id="matrix"></canvas>
+    <header>
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1 class="display-4">AliveExLU</h1>
-                    <p class="quote fst-italic">“When the sun is shining, I can do anything; no mountain is too high, no trouble too difficult to overcome.” — Wilma Rudolph</p>
-                    <p class="description text-muted">A person who simply follows trends and tries new things.</p>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <img src="media/image/profile.png" alt="Audrey Hepburn" class="img-fluid rounded-circle profile-img">
-                </div>
+            <div class="logo">AliveExLU</div>
+        </div>
+    </header>
+
+    <section class="profile-section">
+        <div class="container">
+            <img src="media/image/profile.png" alt="Profile" class="profile-img">
+            <h1>AliveExLU</h1>
+            <p class="quote">“The sky above the port was the color of television, tuned to a dead channel.” — William Gibson, Neuromancer (1984)</p>
+            <p class="description">A person who simply follows trends and tries new things.</p>
+            <div class="social-links">
+                <a href="https://t.me/mi_uwu_mi">Telegram</a>
+                <a href="https://steamcommunity.com/profiles/76561199646701194/" target="_blank">Steam</a>
+                <a href="https://mastodon.social/@mi_uwu_mi" target="_blank">Mastodon</a>
+                <a href="https://open.spotify.com/user/31uq62ojgkf6ujvhbtrubcvlhw3u" target="_blank">Spotify</a>
             </div>
         </div>
     </section>
 
-    <section class="socialMedia-section py-5 bg-light">
-        <div class="container">
-            <div class="separator d-flex align-items-center my-4">
-                <div class="flex-grow-1 border-top border-dark"></div>
-                <span class="separator-text mx-3 px-3 bg-dark text-white">Social Media</span>
-                <div class="flex-grow-1 border-top border-dark"></div>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-3 text-center">
-                    <div class="socialMedia-card p-3 bg-white shadow rounded">
-                        <a href="#" class="card-link" style="color: #000; text-decoration: none; display: block;">
-                            <img src="media/image/telegram_poster.png" alt="Telegram Profile" class="img-fluid rounded">
-                            <h5 class="mt-3">Telegram</h5>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 text-center">
-                    <div class="socialMedia-card p-3 bg-white shadow rounded">
-                        <a href="https://steamcommunity.com/profiles/76561199646701194/" target="_blank" class="card-link" style="color: #000; text-decoration: none; display: block;">
-                            <img src="media/image/steam_poster.png" alt="Steam Profile" class="img-fluid rounded">
-                            <h5 class="mt-3">Steam</h5>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 text-center">
-                    <div class="socialMedia-card p-3 bg-white shadow rounded">
-                        <a href="https://mastodon.social/@mi_uwu_mi" class="card-link" style="color: #000; text-decoration: none; display: block;">
-                            <img src="media/image/mastodon_poster.png" alt="Mastodon Profile" class="img-fluid rounded">
-                            <h5 class="mt-3">Mastodon</h5>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 text-center">
-                    <div class="socialMedia-card p-3 bg-white shadow rounded">
-                        <a href="https://discordapp.com/users/923491133525483551" class="card-link" style="color: #000; text-decoration: none; display: block;">
-                            <img src="media/image/discord_poster.png" alt="Discord Profile" class="img-fluid rounded">
-                            <h5 class="mt-3">Discord</h5>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="separator d-flex align-items-center my-4">
-                <div class="flex-grow-1 border-top border-dark"></div>
-                <span class="separator-text mx-3 px-3 bg-dark text-white">Music</span>
-                <div class="flex-grow-1 border-top border-dark"></div>
-            </div>
-            <div class="col-md-3 text-center">
-                <div class="socialMedia-card p-3 bg-white shadow rounded">
-                    <a href="https://open.spotify.com/playlist/36eNQgD2d2UDkLpB6BP9th" class="card-link" style="color: #000; text-decoration: none; display: block;">
-                        <img src="media/image/spotify_poster.png" alt="Spotify Music Playlist" class="img-fluid rounded">
-                        <h5 class="mt-3">Spotify</h5>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="mt-auto bg-light text-center py-3">
-        <p class="mb-0 text-muted">&copy; 2024 AliveExLU Page</p>
+    <footer>
+        <p>© 2025 AliveExLU Page</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+        const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = [];
+        for (let x = 0; x < columns; x++) drops[x] = 1;
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#ffff99';
+            ctx.font = fontSize + 'px VCR OSD Mono';
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars.charAt(Math.floor(Math.random() * chars.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            }
+        }
+        setInterval(draw, 33);
+        window.addEventListener('resize', () => {
+            canvas.height = window.innerHeight;
+            canvas.width = window.innerWidth;
+        });
+    </script>
 </body>
 </html>
